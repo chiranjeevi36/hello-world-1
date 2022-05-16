@@ -17,10 +17,5 @@ pipeline {
         sh 'mvn clean package'
       }
     }
-    stage('Deploy to tomcat server') {
-      steps {
-          ansiblePlaybook credentialsId: 'ansible_id', disableHostKeyChecking: true, installation: 'ansible', inventory: '/home/ec2-user/web-server', playbook: '/home/ec2-user/file01.yml' 
-      }
-    }
   }
 }
