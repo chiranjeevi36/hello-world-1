@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Deploy to tomcat using playbook') {
       steps {
-          ansiblePlaybook credentialsId: 'ansible_id', disableHostKeyChecking: true, installation: 'ansible', inventory: '/home/ec2-user/web-server', playbook: '/home/ec2-user/file01.yml' 
+          ansiblePlaybook credentialsId: 'ansible_id', disableHostKeyChecking: true, installation: 'ansible', inventory: 'web-server', playbook: 'file01.yml' 
       }
     }
   }
